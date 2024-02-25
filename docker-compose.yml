@@ -10,7 +10,7 @@ services:
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: BigPyth0n
-      WORDPRESS_DB_PASSWORD: NBpxWbD8MeHWc
+      WORDPRESS_DB_PASSWORD: myPassword
       WORDPRESS_DB_NAME: aramanPakhshMasterDB
     volumes:
       - /root/wordpress:/var/www/html
@@ -23,7 +23,7 @@ services:
     environment:
       MYSQL_DATABASE: aramanPakhshMasterDB
       MYSQL_USER: BigPyth0n
-      MYSQL_PASSWORD: NBpxWbD8MeHWc
+      MYSQL_PASSWORD: myPassword
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
       - /root/wordpress/db:/var/lib/mysql
