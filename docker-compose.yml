@@ -1,0 +1,33 @@
+version: '2.1'
+
+services:
+
+  wordpress:
+    image: wordpress
+    restart: always
+    ports:
+      - 8181:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: BigPyth0n
+      WORDPRESS_DB_PASSWORD: NBpxWbD8MeHWc
+      WORDPRESS_DB_NAME: aramanPakhshMasterDB
+    volumes:
+      - /root/wordpress:/var/www/html
+    links:
+      - db:db
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: aramanPakhshMasterDB
+      MYSQL_USER: BigPyth0n
+      MYSQL_PASSWORD: NBpxWbD8MeHWc
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - /root/wordpress/db:/var/lib/mysql
+
+volumes:
+  wordpress:
+  db:
